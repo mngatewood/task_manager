@@ -1,0 +1,11 @@
+<a href="/">Home</a>
+<a href="/tasks">Task Index</a>
+<a href="/tasks/<%= @task.id %>"><%= @task.title %></a>
+
+<form action="/tasks/<%= @task.id %>" method="post">
+  <h3>Edit</h3>
+  <input type="hidden" name="_method" value="PUT" />
+  <input type='text' name='task[title]' value="<%= @task.title %>"/><br/>
+  <textarea name='task[description]'><%= @task.description %></textarea><br/>
+  <input type='submit'/>
+</form>
